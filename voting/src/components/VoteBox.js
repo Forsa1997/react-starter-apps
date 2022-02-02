@@ -16,7 +16,7 @@ class VoteBox extends Component {
 
     increaseVoteCount = () => {
         console.log("increaseVoteCount")
-        this.setState({ voteCount: this.state.voteCount++ })
+        this.setState({ voteCount: this.state.voteCount + 1 })
     }
 
 
@@ -24,16 +24,14 @@ class VoteBox extends Component {
     render() {
         return (
             <div className="container">
-                <h1>Vote for a language</h1>
                 <div className="list-group">
                     <div className="list-group-item">
                         <div className="row">
                             <div className="col-md-2">{this.state.voteCount}</div>
-                            <div className="col-md-8">{this.state.name}Placeholder</div>
-                            <div className="col-md-2"><button onClick={(e) => this.increaseVoteCount()}>Vote &#8623;</button></div>
+                            <div className="col-md-8">{this.state.name}</div>
+                            <div className="col-md-2"><button onClick={this.increaseVoteCount}>Vote &#8623;</button></div>
                         </div>
                     </div>
-                    {/* Items go here */}
                 </div>
             </div>
         )
